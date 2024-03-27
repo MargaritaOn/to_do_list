@@ -1,5 +1,7 @@
+const serverAddress = "https://todo-list-app-zu8j.onrender.com";
+
 async function showTime() {
-    let response = await fetch("http://localhost:10000/bar");
+    let response = await fetch(serverAddress + "/bar");
     let time = await response.text();
     let watch = document.getElementById("clock");
     watch.innerHTML = time;
@@ -7,7 +9,7 @@ async function showTime() {
 showTime();
 
 async function toDo(filterDone) {
-    let response = await fetch("http://localhost:10000/todo_list" + (filterDone === true ? "?filterDone=true" : ""));
+    let response = await fetch(serverAddress + "/todo_list" + (filterDone === true ? "?filterDone=true" : ""));
     let taskList = await response.json();
     let rowCont = document.getElementById("list");
     while (rowCont.firstChild) {
@@ -25,7 +27,7 @@ async function toDo(filterDone) {
         function click(event) {
             // event.preventDefault();
             // isDone.checked = !isDone.checked;
-            let statusChangeResponse = fetch(`http://localhost:10000/todo_list/${data.taskID}`, { method: "POST", body: isDone.checked });
+            let statusChangeResponse = fetch(`${serverAddress}/todo_list/${data.taskID}`, { method: "POST", body: isDone.checked });
 
         };
         let delBtn = document.createElement("button");
@@ -33,7 +35,7 @@ async function toDo(filterDone) {
         delBtn.classList.add("mybtn", "delbtn");
         delBtn.textContent = "delete";
         delBtn.addEventListener("click", (e) => {
-            fetch(`http://localhost:10000/delete_task`, {method: "POST", body: data.task});
+            fetch(`${serverAddress}/delete_task`, {method: "POST", body: data.task});
             toDo(!showAll);
         })
         let taskCell = document.createElement("div");
@@ -76,7 +78,7 @@ let inputText = document.getElementById("task");
 addTask.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log(inputText);
-    let taskToAdd = fetch("http://localhost:10000/todo_task", {method: "POST", body: inputText.value});
+    let taskToAdd = fetch(serverAddress + "/todo_task", {method: "POST", body: inputText.value});
     toDo(!showAll);
     inputText.value = "";
 })
