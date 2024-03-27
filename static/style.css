@@ -1,0 +1,103 @@
+#container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgb(231, 206, 217) 0%, rgb(103, 120, 137) 100%);
+    border-radius: 25px;
+    padding-bottom: 3rem;
+}
+h1{
+    border-bottom: rgb(17, 112, 220) 3px solid ;
+}
+h2 {
+    display: inline-block;
+    font-size: 10px;
+}
+#clock{
+    display: inline-block;
+    padding-inline: 2rem;
+    border: black 2px solid;
+    border-radius: 25px;
+    font-size: 10px;
+}
+.mybtn {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #030000;
+    background-color: #727da9;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-bottom: 1rem;
+}
+.mybtn:hover {background-color: #475177}
+
+.mybtn:active {
+  background-color: #3e5e8e;
+  box-shadow: 0 5px #3f3f3f;
+  transform: translateY(4px);
+}
+
+#input {
+    margin-top: 1rem;
+
+}
+
+.delbtn {
+    padding: 5px 9px;
+    border-radius: 10px;
+    box-shadow: 0 1px #999;
+}
+
+#list{
+    width: fit-content;
+    background-color: rgba(153, 228, 241, 0.111);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    padding: 2rem;
+}
+#titleDone{
+    background-color: rgb(254, 236, 244);
+    font-size: 1rem;
+    padding-inline: 1rem;
+    display: flex;
+    gap: 0;
+    font-size: 2rem;
+   
+}
+
+
+#done{
+    background-color: white;
+    font-size: 4rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.taskRow{
+    display: flex;
+    justify-content: space-between;
+    min-width: 15rem;
+}
+
+#buttons {
+    margin-top: 1rem;
+}
+
+.separator {
+    border-top: 1px solid rgb(105, 52, 109);
+    width: 100%;
+    padding-bottom: 5px;
+}
