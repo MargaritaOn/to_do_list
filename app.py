@@ -59,6 +59,6 @@ def deleteTask():
     return("", 204)
 
 if __name__ == '__main__':
-    app.run(threaded=False, processes=1, port=2000)
+    app.run(threaded=False, processes=1, port=10000, host="0.0.0.0")
     
 
