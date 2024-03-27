@@ -5,6 +5,7 @@ from db_init import *
 
 app = Flask(__name__)
 
+
 @app.route("/bar")
 def home():
     now = datetime.now()
